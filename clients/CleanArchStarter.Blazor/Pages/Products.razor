@@ -1,0 +1,59 @@
+@page "/"
+@using CleanArchStarter.Blazor.Products
+@inject ProductsApiClient ProductsClient
+
+<h1>Products</h1>
+
+@if (_loading)
+{
+    <p class="status">Loading&#x2026;</p>
+}
+else if (!string.IsNullOrEmpty(_error))
+{
+    <p class="error">@_error</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in _products)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Name</td>
+                    <td>@p.Price.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Product> _products = [];
+    private bool _loading = true;
+    private string _error = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var products = await ProductsClient.GetProductsAsync();
+            _products = products?.ToList() ?? [];
+        }
+        catch
+        {
+            _error = "Failed to load products. Make sure the API is running.";
+        }
+        finally
+        {
+            _loading = false;
+        }
+    }
+}

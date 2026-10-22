@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/clients/">
+    <Project Path="clients/CleanArchStarter.Blazor/CleanArchStarter.Blazor.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/CleanArchStarter.API/CleanArchStarter.API.csproj" />
+    <Project Path="src/CleanArchStarter.Application/CleanArchStarter.Application.csproj" />
+    <Project Path="src/CleanArchStarter.Domain/CleanArchStarter.Domain.csproj" />
+    <Project Path="src/CleanArchStarter.Infrastructure/CleanArchStarter.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CleanArchStarter.API.Tests/CleanArchStarter.API.Tests.csproj" />
+    <Project Path="tests/CleanArchStarter.Application.Tests/CleanArchStarter.Application.Tests.csproj" />
+  </Folder>
+</Solution>
