@@ -21,7 +21,13 @@ export default function ProductsTable() {
   if (loading) return <p className="status">Loading&#x2026;</p>
   if (error)   return <p className="error">{error}</p>
 
+  async function reloadProducts() {
+    const data = await fetchProducts();
+    setProducts(data);
+  }
+
   return (
+    <div>
     <table>
       <thead>
         <tr>
@@ -39,6 +45,10 @@ export default function ProductsTable() {
           </tr>
         ))}
       </tbody>
-    </table>
+    </table>  
+      <button onClick={reloadProducts}>
+      Refresh
+    </button>
+     </div>
   )
 }

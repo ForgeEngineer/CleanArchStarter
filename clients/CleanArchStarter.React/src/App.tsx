@@ -1,10 +1,20 @@
-import ProductsTable from './products/ProductsTable'
+import ProductsPage from './pages/ProductsPage'
+import CountriesPage from './pages/CountriesPage'
+import { Routes, Route, Link } from 'react-router-dom'
 
 export default function App() {
   return (
-    <main>
-      <h1>Products</h1>
-      <ProductsTable />
-    </main>
+    <>
+      <nav>
+        <Link to="/">Products</Link>
+        {' | '}
+        <Link to="/countries">Countries</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<ProductsPage />} />
+        <Route path="/countries" element={<CountriesPage />} />
+      </Routes>
+    </>
   )
 }
