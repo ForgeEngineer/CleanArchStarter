@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CleanArchStarter.Application\CleanArchStarter.Application.csproj" />
     <ProjectReference Include="..\CleanArchStarter.Infrastructure\CleanArchStarter.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CleanArchStarter.Domain.Common;
-
 namespace CleanArchStarter.Domain.Entities;
+
+using CleanArchStarter.Domain.Common;
 
 public sealed class Product : BaseEntity
 {
